@@ -24,6 +24,7 @@ var client = new SSHClient(
   port: 22,
   username: "sha",
   passwordOrKey: "Password01.",
+  kex: "diffie-hellman-group-exchange-sha256",
 );
 ```
 
@@ -41,6 +42,7 @@ var client = new SSHClient(
 -----END RSA PRIVATE KEY-----""",
     "passphrase": "passphrase-for-key",
   },
+  kex: "diffie-hellman-group-exchange-sha256",
 );
 ```
 
