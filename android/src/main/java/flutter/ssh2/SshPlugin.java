@@ -252,6 +252,10 @@ public class SshPlugin implements MethodCallHandler, StreamHandler, FlutterPlugi
         String host = Objects.requireNonNull(args.get("host")).toString();
         int port = (int)Objects.requireNonNull(args.get("port"));
         String username = Objects.requireNonNull(args.get("username")).toString();
+        String kex = null;
+
+        if(!Objects.isNull(args.get("kex")))
+          kex = args.get("kex").toString();
 
         JSch jsch = new JSch();
 
@@ -270,6 +274,9 @@ public class SshPlugin implements MethodCallHandler, StreamHandler, FlutterPlugi
         }
 
         Session session = jsch.getSession(username, host, port);
+
+        if(kex != null)
+          session.setConfig("kex", kex);
 
         if (password.length() > 0)
           session.setPassword(password);

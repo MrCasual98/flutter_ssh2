@@ -59,6 +59,7 @@ class SSHClient {
   String host;
   int port;
   String username;
+  String? kex;
   dynamic passwordOrKey;
   late StreamSubscription<dynamic> stateSubscription;
   Callback? shellCallback;
@@ -70,6 +71,7 @@ class SSHClient {
     required this.port,
     required this.username,
     required this.passwordOrKey, // password or {privateKey: value, [publicKey: value, passphrase: value]}
+    this.kex, // key exchange algorithm
   }) {
     var uuid = new Uuid();
     id = uuid.v4();
@@ -104,6 +106,7 @@ class SSHClient {
       "port": port,
       "username": username,
       "passwordOrKey": passwordOrKey,
+      "key": kex,
     });
     return result;
   }
