@@ -1,6 +1,7 @@
 # ssh2
 
-SSH and SFTP client for Flutter. Wraps iOS library NMSSH and Android library JSch. This is a fork of flutter_ssh: https://github.com/shaqian/flutter_ssh
+SSH and SFTP client for Flutter. Wraps iOS library NMSSH and Android library JSch. This is a fork of flutter_ssh2: https://github.com/jda258/flutter_ssh2
+This fork adds the possibility to configure the kex (key exchange algorithm) for the SSHClient class.
 
 Wraps iOS library [NMSSH](https://github.com/gaetanzanella/NMSSH/tree/feature/catalyst) and Android library [JSch](https://github.com/mwiede/jsch).
 
