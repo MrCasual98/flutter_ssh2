@@ -275,8 +275,8 @@ public class SshPlugin implements MethodCallHandler, StreamHandler, FlutterPlugi
 
         Session session = jsch.getSession(username, host, port);
 
-        if(kex != null)
-          session.setConfig("kex", kex);
+//         if(kex != null) Hardcoded kex
+          session.setConfig("kex", "diffie-hellman-group-exchange-sha1");
 
         if (password.length() > 0)
           session.setPassword(password);
