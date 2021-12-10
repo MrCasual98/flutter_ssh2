@@ -106,7 +106,7 @@ class SSHClient {
       "port": port,
       "username": username,
       "passwordOrKey": passwordOrKey,
-      "key": kex,
+      "kex": kex,
     });
     return result;
   }
